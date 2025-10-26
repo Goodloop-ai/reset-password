@@ -165,20 +165,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        .back-link {
-            text-align: center;
-            margin-top: 20px;
-        }
 
-        .back-link a {
-            color: #667eea;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .back-link a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
@@ -221,10 +208,6 @@
         <div class="loading" id="loading">
             <div class="spinner"></div>
             <p style="margin-top: 10px; color: #666;">Resetting password...</p>
-        </div>
-
-        <div class="back-link">
-            <a href="/login">Back to Login</a>
         </div>
     </div>
 
@@ -315,10 +298,8 @@
                 }
 
                 // Success
-                showSuccess('Password reset successful! Redirecting to login page...');
-                setTimeout(() => {
-                    window.location.href = '/login';
-                }, 2000);
+                loading.style.display = 'none';
+                showSuccess('Password reset successful!');
 
             } catch (error) {
                 console.error('Password reset error:', error);
